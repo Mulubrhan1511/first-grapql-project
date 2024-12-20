@@ -17,8 +17,8 @@ import { UsersModule } from './users/users.module';
       type: 'mysql',
       host: 'localhost',
       port: 3306,
-      username: 'testuser',
-      password: 'testuser123',
+      username: 'root',  // Default MySQL username
+      password: '',      // No password set (empty string)
       database:
         process.env.NODE_ENV === 'TEST'
           ? 'graphql_tutorial_test'
@@ -26,7 +26,7 @@ import { UsersModule } from './users/users.module';
       entities: [User, UserSetting],
       synchronize: true,
       logging: false,
-    }),
+    }),    
     UsersModule,
   ],
   controllers: [],
